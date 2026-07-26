@@ -1,0 +1,16 @@
+services:
+  workspace:
+    # https://github.com/supinf/dockerized-tools/blob/master/vscode-devcontainer/versions/go1.26-node25/Dockerfile
+    image: ghcr.io/supinf/vscode-devcontainer:go-20260719
+    volumes:
+      - ../:/workspace
+      - $DOCKER_SOCK:/var/run/docker.sock
+      # - $HOME/.config/gcloud:/root/.config/gcloud
+    environment:
+      # AI coding agent configuration
+      - CLAUDE_CODE_USE_VERTEX=true
+      - ANTHROPIC_VERTEX_PROJECT_ID
+      - ANTHROPIC_MODEL=claude-sonnet-5@default
+      - ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-4-5@20251001
+      - GOOGLE_CLOUD_PROJECT
+      - GEMINI_MODEL=gemini-3.6-flash

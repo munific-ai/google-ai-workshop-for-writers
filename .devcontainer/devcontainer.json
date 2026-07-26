@@ -1,0 +1,66 @@
+{
+  "name": "ai-workshop-for-writers",
+  "dockerComposeFile": [
+    "compose.yaml"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [
+  ],
+  "containerEnv": {
+    "LANG": "ja_JP.UTF-8",
+    "LC_ALL": "ja_JP.UTF-8"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.Go",
+        // Git & GitHub
+        "github.vscode-github-actions",
+        "eamodio.gitlens",
+        // AI Assistants
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "anthropic.claude-code",
+        // Code Quality & Formatting
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "oderwat.indent-rainbow",
+        // Documentation & Markdown
+        "yzhang.markdown-all-in-one",
+        // UI & UX
+        "PKief.material-icon-theme",
+        "github.github-vscode-theme",
+        "christian-kohler.path-intellisense",
+        "Wattenberger.footsteps"
+      ],
+      "settings": {
+        // Security
+        "extensions.autoUpdate": false,
+        // Git
+        "git.openRepositoryInParentFolders": "always",
+        "git.confirmSync": false,
+        "git.autofetch": true,
+        // Terminal
+        "terminal.integrated.defaultProfile.linux": "bash",
+        // Editor
+        "editor.formatOnSave": true,
+        "editor.linkedEditing": true,
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        // GitHub Copilot
+        "github.copilot.enable": {
+          "*": true
+        },
+        "github.copilot.nextEditSuggestions.enabled": true,
+        "github.copilot.chat.localeOverride": "ja",
+        "chat.promptFiles": true,
+        // File Exclusions
+        "search.exclude": {
+          "**/node_modules/**": true,
+          "**/.venv/**": true
+        }
+      }
+    }
+  }
+}
